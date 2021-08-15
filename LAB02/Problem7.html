@@ -3,19 +3,355 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Violet on Wednesday</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a6862c1308.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
+        <!-- Block Info -->
+        <div class="block_info">
+            <div>
+                <p><i class="fas fa-phone-alt"></i> Hotline: <b>0968 159 239 - 0838 409 092</b></p>
+            </div>
 
+            <div>
+                <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: <b>01 Nguyễn Cữu Vân, Bình Thạnh, TP.HCM</b></p>
+            </div>
+
+            <div>
+                <a href="#"><b>Đăng nhập</b></a> <span>hoặc</span> <a href="#"><b>Tạo tài khoản mới</b></a>
+            </div>
+        </div>
+
+        <!-- Block 1 -->
+        <div class="block1">
+            <div>
+                <a href="Problem7_home.html"><img src="./img/logo.JPG" alt="logo" loading="lazy"></a>
+
+            </div>
+
+            <div>
+                <form action="" method="GET">
+                    <input type="text" id="search" name="search" placeholder="Tìm kiếm...">
+                    <span><i class="fas fa-search"></i></span>
+                </form>
+            </div>
+
+            <div>
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <p>3 sản phẩm</p>
+                    <p>1,289,000 đ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="Problem7_home.html">TRANG CHỦ</a></li>
+                <li><a href="#">HOA SINH NHẬT</a></li>
+                <li><a href="#">HOA TÌNH YÊU</a></li>
+                <li><a href="#">HOA CHÚC MỪNG</a></li>
+                <li><a href="#">HOA VĂN PHÒNG</a></li>
+                <li><a href="#">CHỦ ĐỀ</a></li>
+                <li><a href="#">THIẾT KẾ</a></li>
+                <li><a href="#">THỂ LOẠI</a></li>
+                <li><a href="#">QUÀ TẶNG</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="Problem7_home.html">TRANG CHỦ</a> > <a href="Problem7.html">TÀI KHOẢN CỦA BẠN</a>
+
+        </div>
     </header>
 
     <main>
+        <!-- Article -->
+        <div>
+            <article>
+                <div>
+                    TÀI KHOẢN CỦA BẠN
+                </div>
+            </article>
+        </div>
 
+        <!-- Buttons -->
+        <div>
+            <a href=""><button type="button" class="btn btn-outline-primary">QUẢN LÝ TÀI KHOẢN</button></a>
+            <a href=""><button type="button" class="btn btn-outline-primary">QUẢN LÝ ĐƠN HÀNG</button></a>
+            <a href=""><button type="button" class="btn btn-outline-primary">THAY ĐỔI MẬT KHẨU</button></a>
+        </div>
+
+        <div>
+            <p>
+                Bạn có thể cập nhập lại những thông tin của mình tại các trường dưới đây
+            </p>
+
+            <p>
+                <b>Lưu ý:</b> Những trường có dấu "<span style="color: red;">*</span>" là bắt buộc
+            </p>
+        </div>
+
+        <div>
+            <form action="" method="POST">
+                <table colspacing="10px">
+                    <tbody>
+                        <tr>
+                            <th>
+                                <label for="name">Họ và tên <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="birthday">Ngày sinh</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" name="name" id="name" value="Nguyễn Văn A" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="birthday" id="birthday" placeholder="01/01/1990">
+                                <i class="fas fa-calendar-alt"></i>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="city">Tỉnh - Thành phố <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="company">Công ty</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" name="city" id="city" value="TP. Hồ Chí Minh" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="company" id="company" placeholder="Công ty của bạn">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="district">Quận - Huyện <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="position">Chức vụ</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" name="district" id="district" value="Quận 5" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="position" id="position" placeholder="Chức vụ tại công ty">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="address">Địa chỉ <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="flower_type">Bạn thích Loại hoa</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" name="address" id="address" value="271/2 An Dương Vương, Phường 3, Quận 5, TP.Hồ Chí Minh" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="flower_type" id="flower_type" placeholder="Hoa hồng, Hoa lan,...">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="phone">Số diện thoại <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="flower_color">Bạn thích Loại hoa</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" name="phone" id="phone" value="0973 371 346" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="flower_color" id="flower_color" placeholder="Hoa dỏ, Màu tím,...">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="email">Email <span style="color: red;">*</span></label>
+                            </th>
+
+                            <th>
+                                <label for="flower_style">Phong cách cắm hoa</label>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="email" name="email" id="email" value="nguyenvana@gmail.com" required>
+                            </td>
+
+                            <td>
+                                <input type="text" name="flower_style" id="flower_style" placeholder="Cổ điển, Hiện đại, Đơn giản, Dễ thương">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-outline-primary">CẬP NHẬP THÔNG TIN</button>
+            </form>
+
+        </div>
+
+        <!-- Block Media -->
+        <div>
+            <hr>
+            <div>
+                <div>
+                    <i class="fas fa-truck"></i>
+                </div>
+
+                <div>
+                    <p>GIAO HÀNG MIỄN PHÍ</p>
+                    <p>
+                        Chúng tôi giao hàng miễn phí trong nội thành
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <div>
+                    <p>TƯ VẤN TẬN TÂM</p>
+                    <p>
+                        Mang đến cho Quý Khách những sản phẩm tốt nhất
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+
+                <div>
+                    <p>GIÁ THÀNH TỐT NHẤT</p>
+                    <p>
+                        Cam kết giá thành & dịch vụ sau bán hàng tốt nhất
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
     </main>
 
     <footer>
+        <!-- Block Footer Info -->
+        <div>
+            <div>
+                <h3>HỆ THỐNG</h3>
+                <hr>
+                <ul>
+                    <li><a href="">Hoa sinh nhật</a></li>
+                    <li><a href="">Hoa cưới</a></li>
+                    <li><a href="">Hoa chúc mừng</a></li>
+                    <li><a href="">Chủ đề</a></li>
+                    <li><a href="">Thiết kế</a></li>
+                    <li><a href="">Hoa theo thể loại</a></li>
+                    <li><a href="">Quà tặng</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>CÔNG TY</h3>
+                <hr>
+                <ul>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Tin tức</a></li>
+                    <li><a href="">Tuyển dụng</a></li>
+                    <li><a href="">Chính sách thành viên</a></li>
+                    <li><a href="">Chương trình khuyến mãi</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>CÔNG TY</h3>
+                <hr>
+                <ul>
+                    <li><a href="">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="">Phương thức thanh toán</a></li>
+                    <li><a href="">Điều khoản mua hàng</a></li>
+                    <li><a href="">Phí vận chuyển</a></li>
+                    <li><a href="">Ý nghĩa các loài hoa</a></li>
+                    <li><a href="">Chăm sóc và bảo quản hoa</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>VIOLET ON WEDNESDAY</h3>
+                <hr>
+                <table>
+                    <tr>
+                        <th>Địa chỉ</th>
+                        <td>01 Nguyễn Cửu Vân Bình Thạnh, TP.HCM</td>
+                    </tr>
+
+                    <tr>
+                        <th>Điện thoại</th>
+                        <td>08 38 40 90 92</td>
+                    </tr>
+
+                    <tr>
+                        <th>Hotline</th>
+                        <td>0968 159 239</td>
+                    </tr>
+                </table>
+
+                <p><b>Mọi ý kiến xin vui lòng gửi về</b></p>
+                <p>support@violetwednesday.com</p>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-google-plus-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div>
+            &copy; 2015 Violet on Wednesday Store. All Rights Reserved. Sponsored by Letsop Solutions.
+        </div>
 
     </footer>
 </body>
