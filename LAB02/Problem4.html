@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Last Name</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">File</a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                <li><a href="#">Go</a></li>
+                <li><a href="#">Bookmarks</a></li>
+                <li><a href="#">Tool</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="#" method="POST">
+            <table border="1">
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Clear This Form</button>
+                        </td>
+                    </tr>
+
+                </tfoot>
+
+                <tbody>
+                    <tr>
+                        <th>
+                            <label for="lastname">Last Name</label>
+                        </th>
+
+                        <td>
+                            <input type="text" name="lastname" id="lastname">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <label for="firstname">First Name</label>
+                        </th>
+
+                        <td>
+                            <input type="text" name="firstname" id="firstname">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="address">Address</label></th>
+
+                        <td>
+                            <textarea name="address" id="adress" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="city">City</label></th>
+
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="city" id="city">
+                                    </td>
+
+                                    <td>
+                                        <label for="state"><b>State</b></label>
+                                        <input type="text" name="state" id="state">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <th> <label for="zip">Zip/Postal Code</label></th>
+
+                        <td>
+                            <input type="text" name="zip" id="zip">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th> <label for="country">Country</label></th>
+
+                        <td>
+                            <select name="country" id="country">
+                                <option value="bulgaria">Bulgaria</option>
+                                <option value="vietnam">Vietnam</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="phone">Phone(country code, area code, number)</label></th>
+
+                        <td>
+                            (+
+                            <input type="tel" name="countrycode" id="countrycode">)
+
+                            <input type="tel" name="areacode" id="areacode"> -
+                            <input type="tel" name="phone" id="phone">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="email">E-mail</label></th>
+
+                        <td>
+                            <input type="email" name="email" id="email">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="birthday">Birthday</label></th>
+
+                        <td>
+                            <label for="month">Month</label>
+                            <input type="text" name="month" id="month">
+                            <label for="day">Day</label>
+                            <input type="text" name="day" id="day">
+                            <label for="year">Year (4 digit)</label>
+                            <input type="text" name="year" id="year">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="gender">Gender</label></th>
+
+                        <td>
+                            <select name="gender" id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="startingdate">Starting date</label></th>
+                        <td>
+                            <input type="radio" name="startingdate" id="spring">
+                            <label for="spring" style="font-weight: normal;">Spring 2006</label>
+                            <input type="radio" name="startingdate" id="summer">
+                            <label for="summer" style="font-weight: normal;">Summer 2006</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th> <label for="comment">Comments/Questions</label></th>
+
+                        <td>
+                            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </form>
+    </main>
+
+    <footer>
+        <p>
+            Done
+        </p>
+    </footer>
+
+</body>
+
+</html>
