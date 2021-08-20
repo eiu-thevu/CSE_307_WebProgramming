@@ -1,0 +1,68 @@
+.block {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: rgb(55, 55, 55);
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.block-head {
+    padding: 10px;
+    display: flex;
+    height: 60px;
+}
+
+.sceen {
+    width: 10%;
+}
+
+.member {
+    width: 15%;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.btn {
+    width: 10%;
+    margin-top: 20px;
+    height: 24px;
+    border-radius: 15px;
+    background-color: #dd3333;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.item1 {
+    padding-top: 20px;
+    width: 30%;
+}
+
+.item2 {
+    padding-top: 20px;
+    width: 30%;
+}
+
+.block-body {
+    padding: 10px;
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 0px 0px 15px 15px;
+}
+
+h1 {
+    color: yellow;
+}
+
+.block-body p {
+    color: grey;
+}
+
+.block-body span {
+    color: white;
+}

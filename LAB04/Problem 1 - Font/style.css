@@ -1,0 +1,20 @@
+@font-face {
+    font-family: HeadFont;
+    src: url('EdwardianScriptITC.ttf');
+}
+
+.head-font {
+    font-family: "HeadFont", sans-serif;
+}
+
+p {
+    font-family: "Consolas", sans-serif;
+}
+
+.para-2::first-letter {
+    font-family: "HeadFont", sans-serif;
+}
+
+p::first-line {
+    font-weight: bold;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket CSS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .gray-background {
+            background-color: rgb(89, 89, 89);
+        }
+        
+        .head {
+            font-size: 26px;
+            color: rgb(141, 155, 159);
+        }
+        
+        .title {
+            color: rgb(255, 255, 255);
+            font-style: italic;
+        }
+        
+        .yellow {
+            color: yellow;
+        }
+        
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgb(113, 180, 122);
+            display: inline-block;
+        }
+        
+        .gray {
+            color: rgb(141, 155, 159);
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        a {
+            color: yellow;
+            text-decoration: none;
+        }
+        
+        .orange {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container gray-background">
+        <p class="head">TicketID: 409788</p>
+
+        <div class="row">
+            <div class="col-sm-3 title">Name:</div>
+
+            <div class="col-sm-9">
+                <p class="yellow"> <span class="dot"></span> Parker Seidel</p>
+                <p class="red">No Active Support</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 title">Email:</div>
+
+            <div class="col-sm-9">
+                <p class="yellow">seidel@aptmail.com</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 title">Response Time:</div>
+
+            <div class="col-sm-9">
+                <p class="gray">72hours, 60hours left</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 title">Last Action:</div>
+
+            <div class="col-sm-9">
+                <p class="gray">Never been locked.</p>
+                <a href="">Link to public post</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 title">Status:</div>
+            <div class="col-sm-9 orange">Not answered</div>
+        </div>
+    </div>
+</body>
+
+</html>

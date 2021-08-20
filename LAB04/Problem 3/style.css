@@ -1,0 +1,61 @@
+h3 {
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.block {
+    width: 500px;
+    padding: 20px;
+    background-color: rgb(238, 238, 238);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    margin-top: 0;
+}
+
+.container {
+    display: flex;
+    border: 1px solid black;
+    background: white;
+    margin: 10px 0px 40px 0px;
+    padding: 20px;
+}
+
+.image {
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.btn {
+    text-align: right;
+}
+
+.listen {
+    background-image: url(./img/listen.png);
+    padding-left: 10px;
+    color: #fff;
+    font: 20px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.add {
+    background-image: url(./img/add.png);
+    color: #fff;
+    font: 20px;
+    cursor: pointer;
+    text-align: right;
+}

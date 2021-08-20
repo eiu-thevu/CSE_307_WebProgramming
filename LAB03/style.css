@@ -1,0 +1,53 @@
+img {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+}
+
+.nav {
+    background-color: rgb(41, 74, 112);
+    border-bottom: 5px solid rgb(244, 160, 36);
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav ul li a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav ul li:hover {
+    background-color: rgb(244, 160, 36);
+}
+
+.active {
+    background-color: rgb(244, 160, 36);
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+/* Problem 3 */
+
+legend {
+    width: inherit;
+    padding: 0 10px;
+    border-bottom: none;
+    font-weight: bold;
+}
