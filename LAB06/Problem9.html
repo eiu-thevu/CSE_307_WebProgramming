@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection sort</title>
+</head>
+
+<body>
+    <script>
+        let list = [4, 1, 2, 5, 3, 8, 4, 6];
+
+        function selectionSort(list, n) {
+            let i, j, min_index;
+
+            for (i = 0; i < n - 1; i++) {
+                min_index = i;
+                for (j = i + 1; j < n; j++) {
+                    if (list[j] < list[min_index]) {
+                        min_index = j;
+                    }
+                }
+
+                let temp = list[min_index];
+                list[min_index] = list[i];
+                list[i] = temp;
+            }
+        }
+
+        selectionSort(list, list.length);
+        console.log(list);
+    </script>
+</body>
+
+</html>
+
+</html>

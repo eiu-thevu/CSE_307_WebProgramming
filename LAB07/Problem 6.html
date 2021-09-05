@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay</title>
+
+    <style>
+        #overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="under">
+        <p>Text</p>
+        <button onclick="turn_on()">Overlay</button>
+    </div>
+
+    <div id="overlay">
+        <div class="text-overlay">
+            <p>Text OverLay</p>
+            <button onclick="turn_off()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function turn_on() {
+            document.getElementById("overlay").style.display = 'block';
+        }
+
+        function turn_off() {
+            document.getElementById("overlay").style.display = 'none';
+
+        }
+    </script>
+</body>
+
+</html>

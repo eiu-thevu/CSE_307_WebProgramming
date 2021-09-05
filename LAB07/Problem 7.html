@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Messages</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .danger {
+            background-color: #f66359;
+            color: #fff;
+        }
+        
+        .success {
+            background-color: #6bbd6e;
+            color: #fff;
+        }
+        
+        .info {
+            background-color: #47a8f5;
+            color: #fff;
+        }
+        
+        .warning {
+            background-color: #ffaa2c;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alert alert-warning alert-dismissible fade show danger" role="alert">
+        <strong>Danger! </strong>Indicates a dangerous or potentially negative action.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closeElement(this)">
+            <span aria-hidden="true ">&times;</span>
+        </button>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show success " role="alert">
+        <strong>Success! </strong>Indicates a successful or positive action.
+        <button type="button " class="close " data-dismiss="alert " aria-label="Close" onclick="closeElement(this)">
+            <span aria-hidden="true ">&times;</span>
+        </button>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show info " role="alert">
+        <strong>Info! </strong>Indicates a neutral informative change or action.
+        <button type="button " class="close " data-dismiss="alert " aria-label="Close" onclick="closeElement(this)">
+            <span aria-hidden="true ">&times;</span>
+        </button>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show warning " role="alert">
+        <strong>Warning! </strong>Indicates a warning that might need attenion.
+        <button type="button " class="close " data-dismiss="alert " aria-label="Close" onclick="closeElement(this)">
+            <span aria-hidden="true ">&times;</span>
+        </button>
+    </div>
+
+    <script>
+        function closeElement(ev) {
+            ev.parentElement.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

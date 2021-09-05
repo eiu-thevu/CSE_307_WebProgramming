@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Array of Objects</title>
+</head>
+
+<body>
+
+    <script>
+        let list = [{
+                "id": '1',
+                "name": 'A',
+                "quantity": 10,
+                "price": 50,
+                "image": ''
+            },
+
+            {
+                "id": '2',
+                "name": 'B',
+                "quantity": 15,
+                "price": 20,
+                "image": ''
+            },
+
+            {
+                "id": '3',
+                "name": 'C',
+                "quantity": 20,
+                "price": 30,
+                "image": ''
+            }
+
+        ];
+
+        // for (let i of list) console.log(i);  
+
+        function sortByPrice() {
+            // list.sort(compareByMoney)
+            list.sort(function compareByMoney(a,b) {
+                let res = 0;
+
+                 a.price < b.price ? res = -1 : (a.price > b.price ? res = 1 : res = 0);
+
+                return res;
+            })
+        }
+
+        // function compareByMoney(a, b) {
+        //     let res = 0;
+
+        //     a.price < b.price ? res = -1 : (a.price > b.price ? res = 1 : res = 0);
+
+        //     return res;
+        // }
+
+        // sortByPrice();
+        // for (let i of list) console.log(i);
+    </script>
+</body>
+
+</html>

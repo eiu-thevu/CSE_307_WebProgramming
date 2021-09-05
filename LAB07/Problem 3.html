@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Progress Bar</title>
+
+    <style>
+        /* body {
+            margin-left: 100px;
+            margin-right: 100px;
+        } */
+        
+        #bar {
+            width: 100%;
+            background-color: #dfdfdf;
+            height: 30px;
+        }
+        
+        #progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #52b155;
+            position: absolute;
+            line-height: 30px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        button {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Progess Bar</h1>
+
+    <div id="bar">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <button onclick="run()">Click me</button>
+
+    <script>
+        function run() {
+            let _bar = document.getElementById('progress-bar');
+            let width = 0;
+            let per = setInterval(function percent() {
+                if (width == 100) {
+                    clearInterval(per);
+                } else {
+                    width++;
+                    _bar.style.width = width + "%";
+                    _bar.innerHTML = width + "%";
+                }
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

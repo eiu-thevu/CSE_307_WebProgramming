@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <script src="https://use.fontawesome.com/3e46b9d8cf.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        body {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+        
+        .form {
+            background-color: #659ff7;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .form p {
+            font-weight: bold;
+            text-transform: capitalize;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        input[type=text] {
+            width: 70%;
+            height: 30px;
+            border: none;
+            padding: 10px;
+        }
+        
+        .form .submit {
+            width: 20%;
+            border: none;
+            height: 30px;
+            line-height: 9px;
+            padding: 10px;
+            margin-left: -4px;
+            background-color: #d9d9d9;
+        }
+        
+        .list {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .list li {
+            position: relative;
+            list-style-type: none;
+            padding: 10px 35px;
+            cursor: pointer;
+        }
+        
+        .list li:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        
+        .list li:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        .list li:active {
+            background-color: #888888 !important;
+            color: #fff;
+        }
+        
+        .checkedParent:before {
+            content: "\2713";
+            font-weight: 700;
+            margin-right: 10px;
+            margin-left: -20px;
+            text-decoration: none !important;
+        }
+        
+        .checked {
+            text-decoration: line-through;
+        }
+        
+        .closebtn {
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form">
+        <div class="head-form">
+            <p>My to do list</p>
+
+            <input type="text" name="title" id="title" placeholder="Title...">
+            <button type="submit" class="submit" onclick="add()">Add</button>
+        </div>
+    </div>
+
+    <div>
+        <ul class="list" id="list">
+            <li><span class="content">Hit the gym</span> <span class="closebtn">&times;</span></li>
+            <li><span class="content">Marry</span> <span class="closebtn">&times;</span></li>
+            <li><span class="content">Meet Girl Friends</span> <span class="closebtn">&times;</span></li>
+            <li><span class="content">Buy eggs</span> <span class="closebtn">&times;</span></li>
+            <li><span class="content">Read a book</span> <span class="closebtn">&times;</span></li>
+            <li><span class="content">Organize room</span> <span class="closebtn">&times;</span></li>
+        </ul>
+    </div>
+    <!-- JS -->
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script> -->
+    <script>
+        let _list = document.querySelector('.list');
+
+        _list.addEventListener("click", function(ev) {
+            if (ev.target.tagName === "LI") {
+                ev.target.classList.toggle('checkedParent')
+                ev.target.querySelector('.content').classList.toggle('checked');
+            } else if (ev.target.className === "content" || ev.target.className === "content checked") {
+                ev.target.parentElement.classList.toggle('checkedParent');
+                ev.target.classList.toggle('checked');
+            } else if (ev.target.className === "closebtn") {
+                ev.target.parentElement.remove();
+            }
+        })
+
+        function add() {
+            let _s = document.getElementById("title");
+
+            if (_s.value === '') {
+                alert("Write Something !!!")
+            } else {
+                let _li = document.createElement("li");
+                _li.innerHTML = "<span class = 'content'>" + _s.value + "</span>" + "<span class='closebtn'>&times;</span>";
+                document.getElementById("list").appendChild(_li);
+                _s.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

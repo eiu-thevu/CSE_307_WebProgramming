@@ -1,0 +1,90 @@
+.title {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title>h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    width: 150px;
+    border-bottom: 5px solid #FF8500;
+    display: inline-block;
+}
+
+.image {
+    border: 1px solid #E7E7E7;
+    position: relative;
+    cursor: pointer;
+}
+
+.product>.image>img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.image .option {
+    display: none;
+    position: absolute;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #FF8500;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.image:hover .option {
+    display: block;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.option a {
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FF8500;
+}
+
+.option a:first-child {
+    margin-top: calc(50% - 50px);
+}
+
+.option a:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.option a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.content {
+    padding: 15px;
+    text-align: center;
+}
+
+.content a,
+.content a:hover {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content p {
+    color: #FF8500;
+    font-size: 13px;
+    font-weight: bold;
+}

@@ -1,0 +1,106 @@
+nav {
+    background-color: rgb(41, 74, 112);
+    border-bottom: 5px solid rgb(244, 160, 36);
+    font-size: 18px;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu>li {
+    padding: 10px;
+    display: inline-block;
+    border-right: 1px solid #fff;
+    margin-bottom: 0;
+    position: relative;
+    text-align: left;
+}
+
+.menu>li:hover {
+    background-color: rgb(244, 160, 36);
+}
+
+.cit-menu-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(41, 74, 112);
+}
+
+.cit-menu-content>li {
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    width: 200px;
+}
+
+.cit-menu:hover .cit-menu-content {
+    display: block;
+}
+
+.cit-menu-content>li:hover {
+    background-color: rgb(244, 160, 36);
+}
+
+.programs-menu-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(41, 74, 112);
+}
+
+.programs-menu-content>li {
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    width: 200px;
+}
+
+.programs-menu:hover .programs-menu-content {
+    display: block;
+}
+
+.programs-menu-content>li:hover {
+    background-color: rgb(244, 160, 36);
+}
+
+.gallery-menu-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(41, 74, 112);
+}
+
+.gallery-menu-content>li {
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    width: 250px;
+}
+
+.gallery-menu:hover .gallery-menu-content {
+    display: block;
+}
+
+.gallery-menu-content>li:hover {
+    background-color: rgb(244, 160, 36);
+}
+
+.dropdown::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f107";
+    padding-left: 5px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <style>
+        body {
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 50px;
+            border: 1px solid #000;
+            height: auto;
+        }
+        
+        .row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .col {
+            width: 25%;
+            padding: 0px 50px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .expand {
+            position: relative;
+            display: none;
+        }
+        
+        button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+        
+        #expandPic {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col ">
+            <img src="./image/p5_1.JPG " alt="pic" loading="lazy" onclick="expanding(this)">
+        </div>
+
+        <div class="col ">
+            <img src="./image/p5_2.JPG " alt="pic" loading="lazy" onclick="expanding(this)">
+        </div>
+
+        <div class="col">
+            <img src=" ./image/p5_3.JPG " alt="pic" loading="lazy" onclick="expanding(this)">
+        </div>
+
+        <div class=" col ">
+            <img src="./image/p5_4.JPG " alt="pic" loading="lazy" onclick="expanding(this)">
+        </div>
+    </div>
+
+    <div class="expand">
+        <button onclick="this.parentElement.style.display='none'">&#10006;</button>
+        <img id="expandPic">
+    </div>
+
+    <script>
+        let _expand_imgage = document.getElementById('expandPic');
+
+        function expanding(evt) {
+            _expand_imgage.src = evt.src;
+            _expand_imgage.parentElement.style.display = "block ";
+        }
+
+        // function close() {
+        //     _expand_imgage.parentElement.style.display = "none";
+        // }
+    </script>
+</body>
+
+</html>

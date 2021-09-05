@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <script>
+        let list = [{
+                "id": '1',
+                "name": 'A',
+                "quantity": 10,
+                "price": 10,
+                "image": ''
+            },
+
+            {
+                "id": '2',
+                "name": 'B',
+                "quantity": 15,
+                "price": 20,
+                "image": ''
+            },
+
+            {
+                "id": '3',
+                "name": 'C',
+                "quantity": 20,
+                "price": 30,
+                "image": ''
+            }
+
+        ];
+
+        for (let i of list) {
+            console.log(i);
+        }
+
+        let product4 = {
+            "id": '4',
+            "name": 'D',
+            "quantity": 30,
+            "price": 40,
+            "image": ''
+        };
+        let product5 = {
+            "id": '5',
+            "name": 'E',
+            "quantity": 60,
+            "price": 70,
+            "image": ''
+        };
+
+        list.unshift(product4);
+        list.push(product5);
+
+        // for (let i of list) {
+        //     console.log(i);
+        // }
+
+
+        function searchByName(_name) {
+            for (let i of list) {
+                if (i.name === _name) {
+                    return i;
+                }
+            }
+        }
+
+        // console.log(searchByName('A'));
+        // console.log(searchByName('G'));
+
+        function removeByID(_id) {
+            for (let i in list) {
+                if (list[i].id === _id) {
+                    list.splice(i, 1);
+                    return 0;
+                }
+            }
+        }
+
+        // removeByID('3');
+        // removeByID('7');
+        // for (let i of list) {
+        //     console.log(i);
+        // }
+
+
+        function sortByName() {
+            list.sort(compare);
+        }
+
+        function compare(a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+        }
+
+        // sortByName();
+        // for (let i of list) {
+        //     console.log(i);
+        // }
+    </script>
+</body>
+
+</html>

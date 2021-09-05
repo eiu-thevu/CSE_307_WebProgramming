@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Management System</title>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <script src="https://use.fontawesome.com/3e46b9d8cf.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .left,
+        main {
+            border: 1px solid #808080;
+            min-height: 500px;
+            padding: 10px;
+        }
+        
+        .title {
+            font-weight: bold;
+        }
+        
+        .ListClass {
+            cursor: pointer;
+        }
+        
+        .add-student {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border: 1px solid #333;
+        }
+        
+        .card-header {
+            margin-bottom: 20px;
+        }
+        
+        .group-elements {
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Management System</h1>
+        </header>
+
+        <div class="row">
+            <div class="col-3">
+                <aside class="left">
+                    <h2>Class list</h2>
+                    <ul class="ListClass">
+                        <!-- <li>Lớp 1</li>
+                        <li>Lớp 2</li> -->
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="col-9">
+                <main class="main-content">
+                    <section class="add-student">
+                        <div class="card-header">
+                            Add a new student
+                        </div>
+
+                        <div class="group-elements">
+                            <div class="row">
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="ID" placeholder="ID">
+                                </div>
+
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="FistName" placeholder="Enter First Name">
+                                </div>
+
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name">
+                                </div>
+
+                                <div class="col-2">
+                                    <select class="form-control" id="Dept" name="Dept"></select>
+                                </div>
+
+                                <div class="col-2">
+                                    <input type="hidden" id="type" value="New">
+                                    <button type="button" class="btn btn-primary" id="Submit">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="group-Title">
+                        <div class="card-header">
+                            Student List
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1 Title">#</div>
+                            <div class="col-4 Title">Full Name</div>
+                            <div class="col-4 Title">Department</div>
+                            <div class="col-3 Title">Function</div>
+                        </div>
+                    </section>
+                    <section class="group-List">
+                        <!-- <div class="row">
+                            <div class="col-1">1</div>
+                            <div class="col-4">Pham The Vu</div>
+                            <div class="col-4">CIT</div>
+                            <div class="col-3">
+                                <button type="button" class="btn Edit">Edit</button>
+                                <button type="button" class="btn Del">Delete</button>
+                            </div>
+                        </div> -->
+                    </section>
+                </main>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            let Staffs, Depts;
+            $.get(
+                'http://45.76.156.126/getdata.php', {
+                    Type: "Staff"
+                },
+                function(data) {
+                    Staffs = data;
+                    Staffs.sort(compareObject);
+                    ShowStudent(Staffs);
+                    // console.log(Staffs);
+                }, "json"
+            );
+
+            $.get(
+                'http://45.76.156.126/getdata.php', {
+                    Type: "Department"
+                },
+                function(data) {
+                    Depts = data;
+                    ShowDepts(Depts);
+                }, "json"
+            );
+
+            function ShowStudent(_StudentList) {
+                let _s = "",
+                    i = 0;
+                for (let _d of _StudentList) {
+                    _s += `
+                    <div class="row">
+                            <div class="col-1">${++i}</div>
+                            <div class="col-4">${_d.FistName + " " + _d.LastName}</div>
+                            <div class="col-4">CIT</div>
+                            <div class="col-3">
+                                <button type="button" class="btn Edit">Edit</button>
+                                <button type="button" class="btn Del" data-id="${_d.ID}">Delete</button>
+                            </div>
+                        </div>`;
+                }
+
+                $(".group-List").html("");
+                $(".group-List").append(_s);
+            };
+
+            // Show Departments
+            function ShowDepts(_DeptList) {
+                let _s = "",
+                    _option = "";
+                for (let _d of _DeptList) {
+                    _s += `<li>${_d}</li>`;
+                    _option += ` <option value="${_d}">${_d}</option>`;
+                }
+                $('.ListClass').append(_s);
+                $("#Dept").append(_option);
+            };
+
+            // Sort
+            function compareObject(a, b) {
+                let res = 0;
+                a.LastName < b.LastName ? res = -1 : (a.LastName > b.LastName ? res = 1 : res = 0)
+
+                return res
+            }
+
+            // Insert
+            $('#Submit').click(function() {
+                let _ID = $('#ID').val();
+                let _fName = $('#FistName').val();
+                let _lName = $('#LastName').val();
+                let _Dept = $('#Dept').val();
+
+                Staffs.unshift({
+                    "ID": _ID,
+                    "FistName": _fName,
+                    "LastName": _lName,
+                    "Email": "",
+                    "Department": _Dept
+                });
+
+                ShowStudent(Staffs);
+            });
+
+
+            // Delete
+            $(".group-List").on("click", ".Del", function(ev) {
+                let _conf = confirm("Delete it?");
+
+                if (_conf) {
+                    let _node = ev.target;
+                    _node = $(_node);
+                    let _ID = _node.attr("data-id");
+
+
+                    for (let i in Staffs) {
+                        if (Staffs[i].ID === _ID) {
+                            Staffs.splice(i, 1);
+                            break;
+                        }
+                    }
+                }
+
+                ShowStudent(Staffs);
+            })
+
+            //Show Student on Department
+            $(".ListClass").on("click", "li", function(ev) {
+                let _node = ev.target;
+                _node = $(_node);
+                let _DeptName = _node.text();
+
+                let _tempList = [];
+                for (let _d of Staffs) {
+                    if (_d.Department == _DeptName) {
+                        _tempList.push(_d);
+                    }
+                }
+
+                ShowStudent(_tempList)
+            })
+
+        })
+    </script>
+</body>
+
+</html>
