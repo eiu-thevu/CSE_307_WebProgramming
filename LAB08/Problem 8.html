@@ -138,7 +138,6 @@
                     Staffs = data;
                     Staffs.sort(compareObject);
                     ShowStudent(Staffs);
-                    // console.log(Staffs);
                 }, "json"
             );
 
@@ -216,9 +215,11 @@
                 let _conf = confirm("Delete it?");
 
                 if (_conf) {
-                    let _node = ev.target;
-                    _node = $(_node);
-                    let _ID = _node.attr("data-id");
+                    // let _node = ev.target;
+                    // _node = $(_node);
+                    // let _ID = _node.attr("data-id");
+
+                    let _ID = $(this).attr("data-id");
 
 
                     for (let i in Staffs) {
@@ -234,9 +235,11 @@
 
             //Show Student on Department
             $(".ListClass").on("click", "li", function(ev) {
-                let _node = ev.target;
-                _node = $(_node);
-                let _DeptName = _node.text();
+                // let _node = ev.target;
+                // _node = $(_node);
+                // let _DeptName = _node.text();
+
+                let _DeptName = $(this).text();
 
                 let _tempList = [];
                 for (let _d of Staffs) {
@@ -247,6 +250,13 @@
 
                 ShowStudent(_tempList)
             })
+
+        })
+
+
+        // Edit
+
+        $(".group-List").on("click", ".Edit", function(ev) {
 
         })
     </script>

@@ -13,21 +13,25 @@
         .danger {
             background-color: #f66359;
             color: #fff;
+            transition: 0.5s;
         }
         
         .success {
             background-color: #6bbd6e;
             color: #fff;
+            transition: 0.5s;
         }
         
         .info {
             background-color: #47a8f5;
             color: #fff;
+            transition: 0.5s;
         }
         
         .warning {
             background-color: #ffaa2c;
             color: #fff;
+            transition: 0.5s;
         }
     </style>
 </head>
@@ -63,7 +67,7 @@
 
     <script>
         function closeElement(ev) {
-            ev.parentElement.style.display = "none";
+            ev.parentElement.remove();
         }
     </script>
 </body>

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Product Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style type="text/css">
+        header {
+            text-align: center;
+            background-color: #111;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+        }
+        
+        .left-side {
+            background-color: #eee;
+            padding-top: 15px;
+        }
+        
+        .BrandList li {
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 10px;
+        }
+        
+        .card-header {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .Title,
+        label {
+            font-weight: bold;
+        }
+        
+        .NewProduct {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        
+        #Submit {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .GroupElements {
+            padding: 0px 10px;
+        }
+        
+        .group-List img {
+            max-width: 100px;
+            height: auto;
+        }
+        
+        .group-List .row {
+            margin-top: 20px;
+        }
+        
+        footer {
+            padding: 20px 0px;
+            background: #111;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        PRODUCT MANAGEMENT SYSTEM
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 left-side">
+                <h2>Brand List</h2>
+                <ul class="BrandList">
+                    <!-- <li>Item 1</li>
+                    <li>Item 2</li> -->
+                </ul>
+            </div>
+
+            <div class="col-10">
+                <main class="main-content">
+                    <section class="NewProduct">
+                        <div class="card-header">
+                            Add a new product
+                        </div>
+
+                        <div class="GroupElements">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Product Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="ProductName" id="Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Price</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="Price" id="Price">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Quantity</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Quantity">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Image Link</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Image_URL">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Description</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="3" id="Description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Brand</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="Brands">
+                                                <!-- <option value="Brand 1">Brand 1</option>
+                                                <option value="Brand 2">Brand 2</option> -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="offset-md-1 col-sm-11">
+                                    <button type="button" class="btn btn-primary" id="Add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of the form section -->
+
+                    <section class="group-Title">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h3 class="student-list">PRODUCT LIST</h3>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" placeholder="Product Name" id="Search_Name">
+                                </div>
+                                <div class="col-1">
+                                    <button class="form-control SearchBtn" type="button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 Title">#</div>
+                            <div class="col-1 Title">Image</div>
+                            <div class="col-2 Title">Product Name</div>
+                            <div class="col-2 Title">Price</div>
+                            <div class="col-1 Title">Quantity</div>
+                            <div class="col-4 Title">Description</div>
+                            <div class="col-1 Title">Function</div>
+                        </div>
+                    </section>
+                    <!-- End of the product title group -->
+
+                    <section class="group-List">
+                        <!-- <div class="row">
+                            <div class="col-1">1</div>
+                            <div class="col-1"><img
+                                    src="https://www.xtmobile.vn/vnt_upload/product/04_2018/ip_X_gray_800x800.jpg"
+                                    class="img-fluid"></div>
+                            <div class="col-2">Product 1</div>
+                            <div class="col-2">20.000.000 VNĐ</div>
+                            <div class="col-1">20</div>
+                            <div class="col-4">This is the product description.</div>
+                            <div class="col-1">
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </div>
+                        </div> -->
+                    </section>
+                    <!-- End of the product list group -->
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Product Management System - 2021
+    </footer>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            let brands, products;
+
+            $.get(
+                'http://45.32.46.181/getProducts.php', {
+                    GetProducts: "Brand"
+                },
+                function(data) {
+                    brands = data;
+                    showAllBrands(brands);
+                }, "json"
+            );
+
+            $.get(
+                'http://45.32.46.181/getProducts.php', {
+                    GetProducts: "All"
+                },
+                function(data) {
+                    products = data;
+                    products.sort(compareProductQuantity);
+                    showAllProducts(products);
+                }, "json"
+            );
+
+            function showAllBrands(_Brands) {
+                let _s = '',
+                    _option = '';
+
+                for (let _d of _Brands) {
+                    _s += `<li>${_d}</li>`;
+                    _option += `<option value="${_d}">${_d}</option>`;
+                }
+
+                $('.BrandList').append(_s);
+                $('#Brands').append(_option);
+            };
+
+            function compareProductQuantity(a, b) {
+                let res = 0;
+                a.Quantity < b.Quantity ? res = 1 : (a.Quantity > b.Quantity ? res = -1 : res = 0);
+                return res;
+            }
+
+            function showAllProducts(_Products) {
+                let _s = '';
+                let i = 0;
+
+                for (let _d of _Products) {
+                    _s += `
+                    <div class="row">
+                            <div class="col-1">${++i}</div>
+                            <div class="col-1"><img
+                                    src="${_d.Image_URL}"
+                                    class="img-fluid"></div>
+                            <div class="col-2">${_d.Name}</div>
+                            <div class="col-2">${_d.Price}</div>
+                            <div class="col-1">${_d.Quantity}</div>
+                            <div class="col-4">${_d.Description}</div>
+                            <div class="col-1">
+                                <button type="button" class="btn btn-outline-danger DeleteBtn" data-id="${_d.Code}">Delete</button>
+                            </div>
+                    </div>                    `
+                }
+
+                $(".group-List").html("");
+                $(".group-List").append(_s);
+            };
+
+            $('#Add').click(function() {
+                let _Name = $('#Name').val();
+                let _Price = $('#Price').val();
+                let _Quantity = $('#Quantity').val();
+                let _Image_URL = $('#Image_URL').val();
+                let _Description = $('#Description').val();
+                let _CateCode = $('#Brands').val();
+
+                products.unshift({
+                    "Code": _Name + _CateCode,
+                    "Name": _Name,
+                    "Price": _Price,
+                    "Quantity": _Quantity,
+                    "Image_URL": _Image_URL,
+                    "Description": _Description,
+                    "CateCode": _CateCode
+                });
+
+                products.sort(compareProductQuantity);
+                showAllProducts(products);
+            })
+
+            $(".group-List").on("click", ".DeleteBtn", function(ev) {
+                let _conf = confirm("Delete it?");
+
+                if (_conf) {
+                    let _Code = $(this).attr("data-id");
+
+
+                    for (let i in products) {
+                        if (products[i].Code === _Code) {
+                            products.splice(i, 1);
+                            break;
+                        }
+                    }
+                }
+
+                showAllProducts(products);
+            })
+
+            $(".BrandList").on("click", "li", function(ev) {
+                let _brandList = $(this).text();
+
+                let _tempList = [];
+
+                for (let _d of products) {
+                    if (_d.CateCode == _brandList) {
+                        _tempList.push(_d);
+                    }
+                }
+
+                showAllProducts(_tempList)
+            })
+
+            $('.SearchBtn').click(function() {
+                let _Name = $('#Search_Name').val();
+
+                if (_Name == '') {
+                    alert('Enter Product Name To Search !!!');
+                } else {
+                    let p;
+                    let _tempList = [];
+
+                    for (let _d of products) {
+                        if (_d.Name == _Name) {
+                            p = _d;
+                            break;
+                        }
+                    }
+
+                    if (p == null) {
+                        alert("Cannot Find Any Item !!!");
+                    } else {
+                        _tempList.push(p);
+                        showAllProducts(_tempList);
+                    }
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Develop a To-do List.</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <script src="https://use.fontawesome.com/3e46b9d8cf.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        body {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #888888;
+            border-radius: 5px;
+        }
+        
+        .form {
+            margin-bottom: 10px;
+        }
+        
+        .form p {
+            color: #333;
+            font-size: 26px;
+            font-weight: 500;
+        }
+        
+        input[type=text] {
+            width: 500px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        .form .submit {
+            width: 50px;
+            height: 30px;
+            line-height: 9px;
+            padding: 10px;
+            margin-left: -4px;
+            margin-right: 0;
+            background-color: #fff;
+            border: 1px solid#000;
+        }
+        
+        .list {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .list li {
+            position: relative;
+            list-style-type: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .list li:nth-child(odd) {
+            background-color: #eee;
+        }
+        
+        .list li:nth-child(even) {
+            background-color: #ddd;
+        }
+        
+        .list li:first-child {
+            background-color: #ccc;
+        }
+        
+        .list li:last-child {
+            background-color: #888;
+        }
+        
+        .checked {
+            text-decoration: line-through;
+        }
+        
+        .Del {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 10px 20px;
+            background-color: #04AA6D;
+        }
+        
+        .Del:hover {
+            background-color: #f44336;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form">
+        <div class="head-form">
+            <p>To do List</p>
+
+            <input type="text" name="title" id="title" placeholder="Enter your task">
+            <button type="submit" class="submit" onclick="add()">Add</button>
+        </div>
+    </div>
+
+    <div>
+        <ul class="list" id="list">
+            <li><span class="content">Item 1</span><span class="Del">Delete</span></li>
+            <li><span class="content">Item 2</span><span class="Del">Delete</span></li>
+            <li><span class="content">Item 3</span><span class="Del">Delete</span></li>
+            <li><span class="content checked">Item 4</span><span class="Del">Delete</span></li>
+
+        </ul>
+    </div>
+    <!-- JS -->
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script> -->
+    <script>
+        let _list = document.querySelector('.list');
+
+        _list.addEventListener("click", function(ev) {
+            if (ev.target.tagName === "LI") {
+                ev.target.classList.toggle('checkedParent')
+                ev.target.querySelector('.content').classList.toggle('checked');
+            } else if (ev.target.className === "content" || ev.target.className === "content checked") {
+                ev.target.parentElement.classList.toggle('checkedParent');
+                ev.target.classList.toggle('checked');
+            } else if (ev.target.className === "Del") {
+                ev.target.parentElement.remove();
+            }
+        })
+
+        function add() {
+            let _s = document.getElementById("title");
+
+            if (_s.value === '') {
+                alert("Write Something !!!")
+            } else {
+                let _li = document.createElement("li");
+                _li.innerHTML = "<span class='content'>" + _s.value + "</span><span class='Del'>Delete</span>"
+                document.getElementById("list").appendChild(_li);
+                _s.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
